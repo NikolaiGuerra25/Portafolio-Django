@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content%}
+
+<section class="innerPageBannerCol">
+    <div class="lightBg">
+        <div class="container pt-8 mt-5">
+            <form id="contactForm" method="POST" action="/skill/" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="name">Name</label>
+                {{form.name}}
+
+                <label for="score">Score</label>
+                {{form.score}}
+
+                <label for="image">Image</label>
+                {{form.image}}
+
+                <label for="key_skill">Key skill</label>
+                {{form.is_key_skill}}
+
+                <input class='btn btnPrimary' type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
